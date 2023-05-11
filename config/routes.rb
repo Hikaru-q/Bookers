@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
  
   get 'top' => 'homes#top'
+  
+  get 'books/:id' => 'books#show', as: 'book'
+  get 'books/:id/edit' => 'books#edit', as: 'edit_book'
+  patch 'books/:id' => 'books#update', as: 'update_book'
   resources :books
   
   root :to => 'homes#top'
